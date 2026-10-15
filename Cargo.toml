@@ -1,0 +1,41 @@
+[package]
+name = "celestia"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.86"
+license = "MIT OR Apache-2.0"
+description = "no_std sun and moon position/phase calculations"
+readme = "README.md"
+repository = "https://github.com/hz2/celestia"
+categories = ["science", "no-std"]
+keywords = ["astronomy", "sun", "moon", "ephemeris", "no-std"]
+
+[package.metadata.docs.rs]
+rustdoc-args = ["--html-in-header", "katex-header.html"]
+
+[lib]
+name = "celestia"
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(kani)'] }
+
+[features]
+default = ["std"]
+std = []
+libm = ["dep:libm"]
+
+[dependencies]
+libm = { version = "0.2", optional = true }
+
+[dev-dependencies]
+approx = "0.5"
+astro = "2.0.0"
+criterion = "0.8"
+pracstro = "1.1.1"
+
+[[bench]]
+name = "series"
+harness = false
+
+[profile.bench]
+debug = true
