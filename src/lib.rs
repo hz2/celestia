@@ -1,4 +1,4 @@
-//! `celestia` — `no_std` sun and moon position/phase calculations.
+//! `celestia` -- `no_std` sun and moon position/phase calculations.
 //!
 //! Implements truncated analytic series in the style of VSOP87 (planets)
 //! and ELP2000-82B (Moon), following the truncation strategy used by
@@ -11,7 +11,7 @@
 //! evaluation itself (`gappa/` in the repository) shows that rounding
 //! error is many orders of magnitude below the series truncation error,
 //! for both correctly-rounded and typical 1-ulp trigonometric
-//! implementations — so the accuracy budget is set by term count, not
+//! implementations -- so the accuracy budget is set by term count, not
 //! arithmetic.
 //!
 //! # Features

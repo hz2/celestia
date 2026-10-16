@@ -67,10 +67,10 @@ mod tests {
 
 /// Kani proof harnesses. Run with `cargo kani --harness <name>`.
 ///
-/// `normalize` only uses `floor`, `*`, `-`, and a comparison — no loops,
+/// `normalize` only uses `floor`, `*`, `-`, and a comparison -- no loops,
 /// no `sin`/`cos`/`sqrt` (the operations Kani over-approximates, per
 /// <https://model-checking.github.io/kani/rust-feature-support.html#floating-point-operations>)
-/// — so this is in Kani's fully-precise, non-approximated subset.
+/// -- so this is in Kani's fully-precise, non-approximated subset.
 #[cfg(kani)]
 mod proofs {
     use super::*;

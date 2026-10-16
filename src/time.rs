@@ -2,7 +2,7 @@
 //!
 //! Uses the Fliegel & Van Flandern (1968) algorithm for the Gregorian
 //! calendar to Julian Day Number conversion, the same integer-arithmetic
-//! formulation used by `sunrise` and `solar-positioning` — it avoids
+//! formulation used by `sunrise` and `solar-positioning` -- it avoids
 //! loops entirely, which makes it straightforward for Kani to explore
 //! exhaustively over a bounded input range.
 
@@ -86,7 +86,7 @@ mod tests {
 ///
 /// `from_gregorian`'s `i64` arithmetic has no loops, so Kani can check
 /// it exhaustively over the full `i32`/`u32` domain of `year`/`month`/
-/// `day` — no `kani::assume` range restriction needed, unlike the
+/// `day` -- no `kani::assume` range restriction needed, unlike the
 /// `[-4800, 1_000_000]` doc comment, which only bounds where the
 /// *calendar semantics* remain meaningful, not where the arithmetic is
 /// overflow-safe.

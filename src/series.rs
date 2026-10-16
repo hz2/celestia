@@ -108,7 +108,7 @@ mod tests {
 /// $[-1, 1]$ regardless of input, per
 /// <https://model-checking.github.io/kani/rust-feature-support.html#floating-point-operations>),
 /// so these harnesses can only prove panic-freedom / finiteness of the
-/// *fold*, not the accuracy claims — that's what `gappa/` proves
+/// *fold*, not the accuracy claims -- that's what `gappa/` proves
 /// instead, on the arithmetic in isolation from the trig calls.
 ///
 /// The fold has a loop whose bound equals `terms.len()`; Kani needs that
